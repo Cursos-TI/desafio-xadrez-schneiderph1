@@ -1,5 +1,32 @@
 #include <stdio.h>
 
+void moverTorre(int casas){
+    if (casas > 0)
+    {
+        printf("Direita\n");
+
+        moverTorre( casas - 1);
+    }
+}
+
+void moverBispo(int casas){
+    if (casas > 0)
+    {
+        printf("Cima, direita \n");
+
+        moverBispo( casas - 1);
+    }
+}
+
+void moverRainha(int casas){
+    if (casas > 0)
+    {
+        printf("Esquerda \n");
+
+        moverRainha( casas - 1);
+    }
+}
+
 int main(){
 
     int peca, i=0;
@@ -15,25 +42,13 @@ int main(){
     switch (peca)
     {
     case 1:
-        for ( i = 0; i <= 4; i++)
-        {
-            printf("Direita \n");
-        }
+        moverTorre(5);
         break;
     case 2:
-        do
-        {
-            printf("Cima, direita \n");
-            i++;
-        } while (i <= 4);
+        moverBispo(5);
         break;
     case 3:
-        while (i <= 7)
-        {  
-            printf("Esquerda \n");
-
-            i++;
-        }
+        moverRainha(8);
         break;
     case 4:
         cav = 1;
